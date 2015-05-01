@@ -31,6 +31,7 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       render 'edit'
+    end
   end
 
   def destroy
@@ -39,7 +40,6 @@ class PostsController < ApplicationController
   end
 
   private
-
     def find_post
       @post = Post.find(params[:id])
     end
@@ -47,5 +47,4 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content)
     end
-  end
 end
